@@ -1,13 +1,13 @@
 import { z } from 'zod';
 
 export const coverImageSchema = z.object({
-  url: z.string().url(),
+  url: z.string(),
   path: z.string().min(1),
   alt: z.string().min(1, 'Texto alternativo é obrigatório'),
 });
 
 export const projectImageSchema = z.object({
-  url: z.string().url(),
+  url: z.string(),
   path: z.string().min(1),
   alt: z.string().min(1, 'Texto alternativo é obrigatório'),
   order: z.number().int().min(0),

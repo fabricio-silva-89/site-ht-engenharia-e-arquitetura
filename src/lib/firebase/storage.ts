@@ -1,4 +1,7 @@
-// TODO: Reativar Firebase Storage quando configurado
+// =============================================================
+// Firebase Storage (desativado temporariamente)
+// Reativar quando o Firebase Storage estiver configurado
+// =============================================================
 // import {
 //     deleteObject,
 //     getDownloadURL,
@@ -6,28 +9,48 @@
 //     uploadBytes,
 // } from 'firebase/storage';
 // import { storage } from './config';
+//
+// export async function uploadImage(
+//   file: File,
+//   projectId: string
+// ): Promise<{ url: string; path: string }> {
+//   const timestamp = Date.now();
+//   const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+//   const storagePath = `projects/${projectId}/${timestamp}_${safeName}`;
+//   const storageRef = ref(storage, storagePath);
+//   await uploadBytes(storageRef, file);
+//   const url = await getDownloadURL(storageRef);
+//   return { url, path: storagePath };
+// }
+//
+// export async function deleteImage(path: string): Promise<void> {
+//   const storageRef = ref(storage, path);
+//   await deleteObject(storageRef);
+// }
+// =============================================================
 
-const PLACEHOLDER_IMAGE = 'https://placehold.co/1200x800/e5e5e0/6b6b6b?text=Imagem+do+Projeto';
+// Armazenamento local via API routes (/api/upload e /api/delete-image)
 
 export async function uploadImage(
-  _file: File,
-  _projectId: string
+  file: File,
+  projectId: string
 ): Promise<{ url: string; path: string }> {
-  // const timestamp = Date.now();
-  // const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
-  // const storagePath = `projects/${projectId}/${timestamp}_${safeName}`;
-  // const storageRef = ref(storage, storagePath);
-  // await uploadBytes(storageRef, file);
-  // const url = await getDownloadURL(storageRef);
-  // return { url, path: storagePath };
-  // Placeholder: retorna imagem placeholder em vez de fazer upload
-  const fakePath = `projects/placeholder/${Date.now()}`;
-  return { url: PLACEHOLDER_IMAGE, path: fakePath };
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('projectId', projectId);
+
+  const res = await fetch('/api/upload', { method: 'POST', body: formData });
+  if (!res.ok) throw new Error('Falha no upload da imagem');
+  return res.json();
 }
 
-export async function deleteImage(_path: string): Promise<void> {
-  // const storageRef = ref(storage, path);
-  // await deleteObject(storageRef);
-  // Placeholder: não faz nada até o Storage ser reativado
-  return;
+export async function deleteImage(filePath: string): Promise<void> {
+  await fetch('/api/delete-image', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ filePath }),
+  });
 }
+  // Placeholder: não faz nada até o Storage ser reativado
+//   return;
+// }
