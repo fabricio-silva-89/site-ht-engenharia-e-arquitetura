@@ -3,7 +3,7 @@
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import { createProject, updateProject } from '@/lib/firebase/firestore';
-import { deleteImage, uploadImage } from '@/lib/firebase/storage';
+import { deleteImage, uploadImage } from '@/lib/firebase/storage'; // placeholder até Storage ser configurado
 import { projectSchema } from '@/lib/schemas/project';
 import { generateSlug } from '@/lib/utils/slug';
 import type { CoverImage, Project, ProjectImage } from '@/types/project';

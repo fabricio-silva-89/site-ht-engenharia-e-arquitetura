@@ -3,7 +3,7 @@
 import Button from '@/components/ui/Button';
 import Modal from '@/components/ui/Modal';
 import { deleteProject as deleteProjectFn, getAllProjects, updateProject } from '@/lib/firebase/firestore';
-import { deleteImage } from '@/lib/firebase/storage';
+import { deleteImage } from '@/lib/firebase/storage'; // placeholder até Storage ser configurado
 import type { Project } from '@/types/project';
 import Image from 'next/image';
 import Link from 'next/link';
