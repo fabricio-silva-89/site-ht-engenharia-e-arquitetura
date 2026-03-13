@@ -1,5 +1,6 @@
 import type { Project } from '@/types/project';
 import ReactMarkdown from 'react-markdown';
+import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 
 interface ProjectInfoProps {
@@ -31,7 +32,7 @@ export default function ProjectInfo({ project }: ProjectInfoProps) {
 
       {/* Full description */}
       <div className="prose prose-neutral max-w-none prose-headings:font-semibold prose-headings:text-primary prose-p:text-secondary prose-a:text-accent">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
           {project.fullDescription}
         </ReactMarkdown>
       </div>

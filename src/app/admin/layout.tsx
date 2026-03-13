@@ -1,18 +1,25 @@
 'use client';
 
 import { useAuth } from '@/hooks/useAuth';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
+  const isLoginPage = pathname === '/admin/login';
 
   useEffect(() => {
-    if (!loading && !user) {
+    if (!loading && !user && !isLoginPage) {
       router.push('/admin/login');
     }
-  }, [user, loading, router]);
+  }, [user, loading, router, isLoginPage]);
+
+  // Allow login page to render without auth
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
 
   if (loading) {
     return (
