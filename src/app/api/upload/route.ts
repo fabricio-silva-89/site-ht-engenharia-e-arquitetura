@@ -28,7 +28,8 @@ export async function POST(req: NextRequest) {
     const storagePath = `${relativePath}/${fileName}`;
 
     return NextResponse.json({ url, path: storagePath });
-  } catch {
-    return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
+  } catch (err) {
+    console.error(err);
+    return NextResponse.json({ error: err }, { status: 500 });
   }
 }
