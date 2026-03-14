@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="text-xl font-bold tracking-tight text-primary">
-              H&T <span className="font-normal text-secondary">Arquitetura</span>
+              H&T <span className="font-normal text-secondary">Engenharia e Arquitetura</span>
             </Link>
             <p className="mt-3 text-sm text-secondary max-w-xs">
               Transformando espaços com design sofisticado e funcional.

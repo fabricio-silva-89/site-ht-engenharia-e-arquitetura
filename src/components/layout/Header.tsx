@@ -20,7 +20,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-xl font-bold tracking-tight text-primary">
-          H&T <span className="font-normal text-secondary">Arquitetura</span>
+          H&T <span className="font-normal text-secondary">Engenharia & Arquitetura</span>
         </Link>
 
         {/* Desktop nav */}

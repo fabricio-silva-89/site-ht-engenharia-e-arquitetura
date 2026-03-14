@@ -25,7 +25,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
           className="text-sm uppercase tracking-[0.3em] text-accent mb-6"
         >
-          Arquitetura & Construção
+          Engenharia & Arquitetura
         </motion.p>
 
         <motion.h1

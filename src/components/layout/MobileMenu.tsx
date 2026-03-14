@@ -19,7 +19,7 @@ export default function MobileMenu({ links, pathname, onClose }: MobileMenuProps
     >
       <div className="flex items-center justify-between px-6 py-4 border-b border-border">
         <Link href="/" onClick={onClose} className="text-xl font-bold tracking-tight text-primary">
-          H&T <span className="font-normal text-secondary">Arquitetura</span>
+          H&T <span className="font-normal text-secondary">Engenharia & Arquitetura</span>
         </Link>
         <button onClick={onClose} className="p-2 text-primary" aria-label="Fechar menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
