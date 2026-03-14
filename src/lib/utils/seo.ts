@@ -1,7 +1,7 @@
 import type { Project } from '@/types/project';
 import type { Metadata } from 'next';
 
-const SITE_NAME = 'Hitalo & Thainá Arquitetura';
+const SITE_NAME = 'Hitalo & Thainá Engenharia e Arquitetura';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://hitalothaina.com.br';
 const DEFAULT_DESCRIPTION =
   'Escritório de arquitetura e construção. Projetos residenciais e comerciais com design sofisticado e funcional.';

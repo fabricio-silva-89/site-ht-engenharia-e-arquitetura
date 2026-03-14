@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Contato',
-  description: 'Entre em contato com a Hitalo & Thainá Arquitetura. Estamos prontos para transformar seu projeto em realidade.',
+  description: 'Entre em contato com a Hitalo & Thainá Engenharia e Arquitetura. Estamos prontos para transformar seu projeto em realidade.',
 });
 
 export default function ContatoPage() {

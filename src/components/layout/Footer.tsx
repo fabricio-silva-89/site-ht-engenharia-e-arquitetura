@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center text-xs text-secondary">
-          © {year} Hitalo & Thainá Arquitetura. Todos os direitos reservados.
+          © {year} Hitalo & Thainá Engenharia e Arquitetura. Todos os direitos reservados.
         </div>
       </div>
     </footer>
